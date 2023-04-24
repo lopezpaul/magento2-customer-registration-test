@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2023 Atwix. All rights reserved.
+ *
+ * @package  Atwix_CustomerRegistrationTest
+ * @author   Atwix <info@atwix.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugins on create account  -->
+    <type name="Magento\Customer\Api\AccountManagementInterface">
+        <plugin name="atwix_customer_registration_clean_firstname_whitestpaces"
+                type="Atwix\CustomerRegistrationTest\Plugin\CleanFirstNameWhitespacesPlugin"
+                sortOrder="10" disabled="false" />
+    </type>
+    <type name="Magento\Customer\Api\AccountManagementInterface">
+        <plugin name="atwix_customer_registration_log"
+                type="Atwix\CustomerRegistrationTest\Plugin\LogCustomerDataPlugin"
+                sortOrder="20" disabled="false" />
+    </type>
+    <type name="Magento\Customer\Api\AccountManagementInterface">
+        <plugin name="atwix_customer_registration_send_email"
+                type="Atwix\CustomerRegistrationTest\Plugin\SendEmailPlugin"
+                sortOrder="30" disabled="false" />
+    </type>
+
+</config>

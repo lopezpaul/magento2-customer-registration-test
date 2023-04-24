@@ -1,0 +1,32 @@
+{
+    "type": "magento2-module",
+    "name": "atwix/module-customer-registration-test",
+    "description": "Modify customer registration flow",
+    "authors": [
+        {
+            "email": "paul.lopezm@gmail.com",
+            "name": "Paul Lopez"
+        }
+    ],
+    "version": "1.0.0",
+    "time": "2023-04-23",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "php": "~8.1.0||~8.2.0",
+        "magento/framework": "103.0.*",
+        "magento/module-customer": "100.0.6.*",
+        "magento/module-email": "101.1.6.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Atwix\\CustomerRegistrationTest\\": ""
+        }
+    }
+}
+

@@ -1,0 +1,23 @@
+<!--@subject {{trans "New Customer Created"}} @-->
+<!--@vars {
+"var first_name|raw":"First Name",
+"var last_name|raw":"Last Name",
+"var email|raw":"Email"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+<table>
+    <tr>
+        <td>First Name: </td>
+        <td>{{var first_name}}</td>
+    </tr>
+    <tr>
+        <td>Last Name: </td>
+        <td>{{var last_name}}</td>
+    </tr>
+    <tr>
+        <td>Email: </td>
+        <td>{{var email}}</td>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}
