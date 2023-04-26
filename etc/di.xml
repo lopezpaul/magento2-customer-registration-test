@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * Copyright © 2023 Atwix. All rights reserved.
+ * Copyright © 2023 LopezPaul. All rights reserved.
  *
- * @package  Atwix_CustomerRegistrationTest
- * @author   Atwix <info@atwix.com>
+ * @package  LopezPaul_CustomerRegistration
+ * @author   Paul Lopez <paul.lopezm@gmail.com>
  */
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Plugins on create account  -->
     <type name="Magento\Customer\Api\AccountManagementInterface">
-        <plugin name="atwix_customer_registration_clean_firstname_whitestpaces"
-                type="Atwix\CustomerRegistrationTest\Plugin\CleanFirstNameWhitespacesPlugin"
+        <plugin name="lopezpaul_customer_registration_clean_firstname_whitestpaces"
+                type="LopezPaul\CustomerRegistration\Plugin\CleanFirstNameWhitespacesPlugin"
                 sortOrder="10" disabled="false" />
     </type>
     <type name="Magento\Customer\Api\AccountManagementInterface">
-        <plugin name="atwix_customer_registration_log"
-                type="Atwix\CustomerRegistrationTest\Plugin\LogCustomerDataPlugin"
+        <plugin name="lopezpaul_customer_registration_log"
+                type="LopezPaul\CustomerRegistration\Plugin\LogCustomerDataPlugin"
                 sortOrder="20" disabled="false" />
     </type>
     <type name="Magento\Customer\Api\AccountManagementInterface">
-        <plugin name="atwix_customer_registration_send_email"
-                type="Atwix\CustomerRegistrationTest\Plugin\SendEmailPlugin"
+        <plugin name="lopezpaul_customer_registration_send_email"
+                type="LopezPaul\CustomerRegistration\Plugin\SendEmailPlugin"
                 sortOrder="30" disabled="false" />
     </type>
 

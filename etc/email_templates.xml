@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * Copyright © 2023 Atwix. All rights reserved.
+ * Copyright © 2023 LopezPaul. All rights reserved.
  *
- * @package  Atwix_CustomerRegistrationTest
- * @author   Atwix <info@atwix.com>
+ * @package  LopezPaul_CustomerRegistration
+ * @author   Paul Lopez <paul.lopezm@gmail.com>
  */
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
     <template id="new_customer" label="New Customer" file="new_customer.html"
-              type="html" module="Atwix_CustomerRegistrationTest" area="frontend"/>
+              type="html" module="LopezPaul_CustomerRegistration" area="frontend"/>
 </config>

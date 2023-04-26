@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 /**
- * Copyright © 2023 Atwix. All rights reserved.
+ * Copyright © 2023 LopezPaul. All rights reserved.
  *
- * @package  Atwix_CustomerRegistrationTest
- * @author   Atwix <info@atwix.com>
+ * @package  LopezPaul_CustomerRegistration
+ * @author   Paul Lopez <paul.lopezm@gmail.com>
  * @license  See LICENSE.txt for license details.
- * @link     https://www.atwix.com/
+ * @link     https://www.lopezpaul.com/
  */
-namespace Atwix\CustomerRegistrationTest\Plugin;
+namespace LopezPaul\CustomerRegistration\Plugin;
 
-use Atwix\CustomerRegistrationTestApi\Api\CustomerLogsInterface;
+use LopezPaul\CustomerRegistrationApi\Api\CustomerLogsInterface;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
 
