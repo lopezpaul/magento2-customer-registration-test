@@ -28,26 +28,14 @@ customer email) to the Customer Support email address configured in Magento
 - Magento_Email
 - LopezPaul_CustomerRegistrationApi
 
-
 ## Installation
 
-### Install using composer 
 ```
 composer require lopezpaul/module-customer-registration
-bin/magento module:enable LopezPaul_CustomerRegistration
+bin/magento module:enable LopezPaul_CustomerRegistration LopezPaul_CustomerRegistrationApi
 bin/magento setup:upgrade
 ```
-### Install from zip file
 
-1. Uncompress file on your main directory of magento installation and automatically it 
-will create directories inside `app/code/LopezPaul` with the name of the extension:
-   - *CustomerRegistration*
-   - *CustomerRegistrationApi*
-2. Execute the following commands:
-```
-bin/magento module:enable LopezPaul_CustomerRegistration
-bin/magento setup:upgrade
-```
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
