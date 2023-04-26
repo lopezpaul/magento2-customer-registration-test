@@ -1,7 +1,7 @@
 {
     "type": "magento2-module",
     "name": "lopezpaul/module-customer-registration",
-    "description": "Modify customer registration flow",
+    "description": "Modifies customer registration flow removing whitespaces from firstname, log basic customer data and send email to customer support.",
     "authors": [
         {
             "email": "paul.lopezm@gmail.com",
@@ -15,10 +15,8 @@
     ],
     "require": {
         "php": "~8.1.0||~8.2.0",
-        "magento/framework": "103.0.*",
-        "magento/module-customer": "100.0.6.*",
-        "magento/module-email": "101.1.6.*",
-        "lopezpaul/module-customer-registration-api": "1.*"
+        "magento/framework": ">=103.0.6",
+        "lopezpaul/module-customer-registration-api": ">=1.0.0"
     },
     "autoload": {
         "files": [
