@@ -1,6 +1,5 @@
 <h1 align="center">LopezPaul_CustomerRegistration</h1> 
 <div align="center">
-  <p>Adds more details to the order grid in the admin.</p>
     <img src="https://img.shields.io/badge/magento-2.4-brightgreen.svg?logo=magento&longCache=true&style=flat-square" alt="Supported Magento Versions" />
     <a href="https://opensource.org/licenses/MIT" target="_blank">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
