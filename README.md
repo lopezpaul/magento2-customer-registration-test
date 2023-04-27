@@ -26,13 +26,12 @@ customer email) to the Customer Support email address configured in Magento
 
 - Magento_Customer
 - Magento_Email
-- LopezPaul_CustomerRegistrationApi
 
 ## Installation
 
 ```
 composer require lopezpaul/module-customer-registration
-bin/magento module:enable LopezPaul_CustomerRegistration LopezPaul_CustomerRegistrationApi
+bin/magento module:enable LopezPaul_CustomerRegistration 
 bin/magento setup:upgrade
 ```
 

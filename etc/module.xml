@@ -13,7 +13,6 @@
         <sequence>
             <module name="Magento_Customer"/>
             <module name="Magento_Email"/>
-            <module name="LopezPaul_CustomerRegistrationApi"/>
         </sequence>
     </module>
 </config>

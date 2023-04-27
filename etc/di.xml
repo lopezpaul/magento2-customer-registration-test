@@ -11,19 +11,27 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Plugins on create account  -->
     <type name="Magento\Customer\Api\AccountManagementInterface">
-        <plugin name="lopezpaul_customer_registration_clean_firstname_whitestpaces"
-                type="LopezPaul\CustomerRegistration\Plugin\CleanFirstNameWhitespacesPlugin"
+        <plugin name="lopezpaul_customer_registration_plugin"
+                type="LopezPaul\CustomerRegistration\Plugin\CustomerRegistrationPlugin"
                 sortOrder="10" disabled="false" />
     </type>
-    <type name="Magento\Customer\Api\AccountManagementInterface">
-        <plugin name="lopezpaul_customer_registration_log"
-                type="LopezPaul\CustomerRegistration\Plugin\LogCustomerDataPlugin"
-                sortOrder="20" disabled="false" />
+    <!-- Interfaces   -->
+    <preference for="LopezPaul\CustomerRegistration\Api\CustomerLogsInterface"
+                type="LopezPaul\CustomerRegistration\Model\CustomerLogs" />
+    <preference for="LopezPaul\CustomerRegistration\Api\CustomerEmailsInterface"
+                type="LopezPaul\CustomerRegistration\Model\CustomerEmails" />
+    <!-- Custom Logger on var/log/lopezpaul.log -->
+    <type name="LopezPaul\CustomerRegistration\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
     </type>
-    <type name="Magento\Customer\Api\AccountManagementInterface">
-        <plugin name="lopezpaul_customer_registration_send_email"
-                type="LopezPaul\CustomerRegistration\Plugin\SendEmailPlugin"
-                sortOrder="30" disabled="false" />
+    <type name="LopezPaul\CustomerRegistration\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">LopezPaulLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">LopezPaul\CustomerRegistration\Logger\Handler</item>
+            </argument>
+        </arguments>
     </type>
-
 </config>
