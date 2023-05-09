@@ -8,9 +8,9 @@
 namespace LopezPaul\CustomerRegistration\Model;
 
 use LopezPaul\CustomerRegistration\Api\CustomerLogsInterface;
-use LopezPaul\CustomerRegistration\Logger\Logger;
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
+use Psr\Log\LoggerInterface;
 
 class CustomerLogs implements CustomerLogsInterface
 {
@@ -19,7 +19,7 @@ class CustomerLogs implements CustomerLogsInterface
      * @param TimezoneInterface $timezone
      */
     public function __construct(
-        private readonly Logger $logger,
+        private readonly LoggerInterface $logger,
         private readonly TimezoneInterface $timezone
     ) {
     }

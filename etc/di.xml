@@ -20,18 +20,32 @@
                 type="LopezPaul\CustomerRegistration\Model\CustomerLogs" />
     <preference for="LopezPaul\CustomerRegistration\Api\CustomerEmailsInterface"
                 type="LopezPaul\CustomerRegistration\Model\CustomerEmails" />
-    <!-- Custom Logger on var/log/lopezpaul.log -->
-    <type name="LopezPaul\CustomerRegistration\Logger\Handler">
+    <!-- Custom Logger on var/log/lopezpaul_customer_registration.log -->
+    <virtualType name="LopezPaulCustomerRegistrationLoggerHandler"
+                 type="Magento\Framework\Logger\Handler\Base">
         <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/lopezpaul_customer_registration.log</argument>
+            <argument name="loggerType" xsi:type="string">400</argument>
             <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
         </arguments>
-    </type>
-    <type name="LopezPaul\CustomerRegistration\Logger\Logger">
+    </virtualType>
+    <virtualType name="LopezPaulCustomerRegistrationLogger"
+                 type="Monolog\Logger">
         <arguments>
-            <argument name="name" xsi:type="string">LopezPaulLogger</argument>
+            <argument name="name" xsi:type="string">LopezPaulCustomerRegistrationLogger</argument>
             <argument name="handlers"  xsi:type="array">
-                <item name="system" xsi:type="object">LopezPaul\CustomerRegistration\Logger\Handler</item>
+                <item name="error" xsi:type="object">LopezPaulCustomerRegistrationLoggerHandler</item>
             </argument>
+        </arguments>
+    </virtualType>
+    <type name="LopezPaul\CustomerRegistration\Model\CustomerLogs">
+        <arguments>
+            <argument name="logger" xsi:type="object">LopezPaulCustomerRegistrationLogger</argument>
+        </arguments>
+    </type>
+    <type name="LopezPaul\CustomerRegistration\Model\CustomerEmails">
+        <arguments>
+            <argument name="logger" xsi:type="object">LopezPaulCustomerRegistrationLogger</argument>
         </arguments>
     </type>
 </config>
